@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 import os
 from datetime import date, timedelta, datetime
+from django.urls import reverse
 
 
 
@@ -30,6 +31,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def get_absolute_url(self):
+        return reverse('profile_url', kwargs={'pk':self.pk})
     
 
 @receiver(post_save, sender=User)

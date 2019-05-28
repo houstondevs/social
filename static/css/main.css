@@ -32,6 +32,11 @@ html{
 
 a{
     color: blue;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 body{
@@ -130,6 +135,29 @@ body{
     
 }
 
-#info-block{
+#posts-list-container{
+    background-color: white;
+    margin-top: 5%;
+    padding: 20px;
     
+}
+
+#posts_list_image{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+#posts-list-a{
+    color: black;
+}
+
+.pagination{
+    display: -ms-flexbox;
+    display: block;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+    text-align:center;
 }

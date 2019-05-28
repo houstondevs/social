@@ -7,10 +7,47 @@
 
 
 {% block body %}
-<div id="users-container" class="container">
+<div id="posts-list-container" class="container">
+    {% if request.user.is_authenticated %}
+        <form method="POST" class="my-ajax-form" data-url="/blog/posts/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border=bottom mb-4">add post</legend>
+                {{ post_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Add</button>
+            </div>
+        </form>
+        {% endif %}
+    <h3 align="center">Posts</h3>
     {% for post in posts  %}
-        <a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
-        {{ post.text }}
+    <div class="card mt-3">
+        <a id="posts-list-a" href="{{ post.user.profile.get_absolute_url }}"><h4 class="card-header"><img id="posts_list_image" src="{{ post.user.profile.image.url }}"> {{ post.user.username }}</h4></a>
+        <div class="card-body">
+          <a id="posts-list-a" href="{{ post.get_absolute_url }}"><h5 class="card-title">{{ post.title }}</h5></a>
+          <p class="card-text">{{ post.text|truncatewords:15 }}</p>
+          <a href="{{ post.user.profile.get_absolute_url }}" class="btn btn-primary">Read</a>
+        </div>
+      </div>
     {% endfor %}
+
+<div class="pagination">
+    <span id="suka" class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 </div>
 {% endblock body %}

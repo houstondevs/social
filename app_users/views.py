@@ -12,7 +12,7 @@ def profiles_list(request):
     return render(request, 'app_users/profile_list.html', {'filter': filter})
 
 
-@login_required
+
 def profile_detail(request, pk):
     profile = get_object_or_404(Profile, pk=pk)
     context = {'profile': profile}
