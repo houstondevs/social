@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block auth_block %}
+
+{% endblock auth_block %}
+
+{% block body %}
+<div id="profile-container" class="container mt-5">
+    <div id="profile-block">
+        <div id="profile-info">
+            <div class="row">
+                <div id="image-block" class="col-4">
+                    <img id="profile_image" src="{{ profile.image.url }}">
+                </div>
+                <div id="info-block" class="col-4">
+                    <p>username: {{ profile.user.username }}</p>
+                    <p>email: {{ profile.user.email }}</p>
+                    <p>city: {{profile.city }}</p>
+                    <p>biography: {{ profile.bio }}</p>
+                    <p>bitrh date: {{ profile.birth_date }}</p>
+                    <p>total age: {{ profile.age }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent"></div>
+
+    </div>
+</div>
+{% endblock body %}

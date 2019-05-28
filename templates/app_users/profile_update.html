@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block auth_block %}
+
+{% endblock auth_block %}
+
+{% block body %}
+<div id="users-container" class="container mt-5">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border=bottom mb-4">Update profile</legend>
+                {{ update_profile_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+        </form>
+</div>
+{% endblock body %}

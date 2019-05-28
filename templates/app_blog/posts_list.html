@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block auth_block %}
+
+{% endblock auth_block %}
+
+
+{% block body %}
+<div id="users-container" class="container">
+    {% for post in posts  %}
+        <a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
+        {{ post.text }}
+    {% endfor %}
+</div>
+{% endblock body %}

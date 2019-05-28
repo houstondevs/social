@@ -1,0 +1,50 @@
+<nav id="navbar-css" class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+    <a id='nb-brand' class="navbar-brand" href="#">
+        <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
+            alt="">
+        SocialHub
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'main_page_url' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+        
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                {% if request.user.is_authenticated %}
+                    {{ user.username }}
+                {% else %}
+                    Profile
+                {% endif %}
+            </button>
+            <div class="dropdown-menu">
+                {% if request.user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'profile_url' request.user.profile.pk %}">Profile</a>
+                <a class="dropdown-item" href="{% url 'update_profile_url' %}">Update Profile</a>
+                <a class="dropdown-item" href="{% url 'account_email' %}">Change email</a>
+                <a class="dropdown-item" href="{% url 'account_change_password' %}">Change Password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                {% else %}
+                <h2>Authorization</h2>
+                <div class="dropdown-divider"></div>
+                
+                <a href="{% url 'account_login' %}"><button  type="button" class="btn btn-primary">Login</button></a>
+                <p class="mt-2">New here? <a id="drop-link" href="{% url 'account_signup' %}">Sign Up now!</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</nav>

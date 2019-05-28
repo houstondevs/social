@@ -1,0 +1,135 @@
+#navbar-css{
+    background: #24292e;
+    box-shadow: 1px 2px 10px black
+}
+
+#nb-brand{
+    color:white;
+}
+
+#auth_forms{
+    margin-top: 5%;
+    display: block;
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    width: 50%;
+    box-shadow: 1px 2px 12px rgba(0, 0, 0, .5)
+}
+
+#drop-link{
+    color: blue;
+}
+
+.dropdown-menu{
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+html{
+    height: 100%;
+}
+
+a{
+    color: blue;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: #b7b4b457;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+}
+
+.form-control{
+    width:50%;
+    display: -webkit-inline-box;
+}
+
+
+.btn-info {
+    color: #fff;
+    background-color: #54a3ff;
+    border-color: #24292e;
+}
+
+#users-container{
+    background-color: white;
+    margin-top: 5%;
+    padding: 20px;
+    box-shadow: 1px 2px 12px rgba(0, 0, 0, .5)
+}
+
+.div-transparent
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 15px;
+	height: 1px;
+}
+
+#users-list{
+    margin-top: 30px;
+}
+
+#filter-container{
+    text-align: center;
+}
+
+#users-row{
+    padding: 5px;
+    text-align: center;
+}
+
+#users-list-img{
+    max-height: 200px;
+    height: 200px;
+}
+
+#profile_image{
+    max-height: 250px;
+    max-width: 250px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+}
+
+#profile-block{
+    background-color: white;
+    height: 600px;
+    padding: 20px;
+    box-shadow: 1px 2px 12px rgba(0, 0, 0, .5)
+}
+
+#image-block{
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    object-fit: cover;
+    
+}
+
+#info-block{
+    
+}
